@@ -6,6 +6,8 @@ import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.PersonajeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class PersonajeServiceimpl implements PersonajeService {
@@ -25,5 +27,10 @@ public class PersonajeServiceimpl implements PersonajeService {
     @Override
     public Personaje save(Personaje personaje) {
         return personajeDao.save(personaje);
+    }
+
+    @Override
+    public List<Personaje> findPersonajesConDescripcion(String muyPoderoso) {
+        return personajeDao.findPersonajesConDescripcion(muyPoderoso);
     }
 }
