@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
+import org.springframework.data.elasticsearch.annotations.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,6 +13,8 @@ import java.util.Set;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Setting(settingPath = "/elasticsearch/personajes-settings.json")
+@Mapping(mappingPath = "/elasticsearch/personajes-mappings.json")
 @Document(indexName = "persona")
 public class Personaje {
 
@@ -24,7 +24,7 @@ public class Personaje {
     @Field(type = FieldType.Text)
     private String nombre;
 
-    @Field(type = FieldType.Text)
+    @Field(type = FieldType.Text, analyzer = "autocomplete", searchAnalyzer = "autocomplete_search")
     private String descripcion;
 
     private int vida;

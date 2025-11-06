@@ -47,4 +47,6 @@ public class PersonajeServiceTest {
         assertEquals(6, personajes.size());
         assertTrue(personajes.stream().map(Personaje::getDescripcion).allMatch(d -> d.contains("muy poderoso")));
     }
+
+
 }
