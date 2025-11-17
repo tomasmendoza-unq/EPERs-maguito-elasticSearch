@@ -33,4 +33,13 @@ public class PersonajeServiceimpl implements PersonajeService {
     public List<Personaje> findPersonajesConDescripcion(String muyPoderoso) {
         return personajeDao.findPersonajesConDescripcion(muyPoderoso);
     }
+
+
+    public List<Personaje> buscarEnNombreODescripcion(String query){
+        // TODO: Buscar en nombre O descripción
+        // "Rey" debe encontrar personajes con "Rey" en nombre o descripción
+        List <Personaje> response = personajeDao.findPersonajesConDescripcionONombre(query);
+        return response;
+    }
+
 }

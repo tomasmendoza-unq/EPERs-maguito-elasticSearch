@@ -48,5 +48,16 @@ public class PersonajeServiceTest {
         assertTrue(personajes.stream().map(Personaje::getDescripcion).allMatch(d -> d.contains("muy poderoso")));
     }
 
+    @Test
+    public void findPersonajesPorNombreODescripcion() {
+        // WHEN
+        List<Personaje> personajes = personajeService.buscarEnNombreODescripcion("poderoso");
+
+        // THEN
+        assertEquals(4, personajes.size(), "Debe encontrar 4 personajes que contengan 'poderoso'");
+        assertTrue(personajes.stream().allMatch(
+                p -> p.getDescripcion().contains("poderoso") || p.getNombre().contains("poderoso")
+        ));
+    }
 
 }

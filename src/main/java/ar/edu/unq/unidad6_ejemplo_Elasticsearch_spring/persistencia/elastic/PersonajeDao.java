@@ -23,4 +23,16 @@ public interface PersonajeDao extends ElasticsearchRepository<Personaje, String>
                 
             """)
     List<Personaje> findPersonajesConDescripcion(String descripcion);
+
+    @Query("""
+    {
+      "bool": {
+        "should": [
+          { "match": { "descripcion": { "query": "?0" } } },
+          { "match": { "nombre": { "query": "?0" } } }
+        ]
+      }
+    }
+    """)
+    List<Personaje> findPersonajesConDescripcionONombre(String query);
 }

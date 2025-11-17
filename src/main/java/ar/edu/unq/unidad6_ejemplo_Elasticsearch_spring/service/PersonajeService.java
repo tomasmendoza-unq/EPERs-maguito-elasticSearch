@@ -10,4 +10,6 @@ public interface PersonajeService {
     Personaje save(Personaje personaje);
 
     List<Personaje> findPersonajesConDescripcion(String muyPoderoso);
+
+    public List<Personaje> buscarEnNombreODescripcion(String query);
 }
