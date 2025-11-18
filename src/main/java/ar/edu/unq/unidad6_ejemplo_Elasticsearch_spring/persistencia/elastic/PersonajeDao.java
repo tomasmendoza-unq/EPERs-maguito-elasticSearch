@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PersonajeDao extends ElasticsearchRepository<Personaje, String> {
+public interface PersonajeDao extends ElasticsearchRepository<Personaje, String>, PersonajeDAOCustom {
 
     Personaje getPersonajeByNombre(String nombre);
 

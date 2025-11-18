@@ -12,4 +12,6 @@ public interface PersonajeService {
     List<Personaje> findPersonajesConDescripcion(String muyPoderoso);
 
     public List<Personaje> buscarEnNombreODescripcion(String query);
+
+    public Double obtenerPromedioVida();
 }

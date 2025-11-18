@@ -42,4 +42,10 @@ public class PersonajeServiceimpl implements PersonajeService {
         return response;
     }
 
+
+    public Double obtenerPromedioVida()  {
+        // TODO: Calcular promedio de vida de todos los personajes
+        return personajeDao.obtenerPromedioVida();
+    }
+
 }
