@@ -15,7 +15,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Setting(settingPath = "/elasticsearch/personajes-settings.json")
 @Mapping(mappingPath = "/elasticsearch/personajes-mappings.json")
-@Document(indexName = "persona")
+@Document(indexName = "personaje")
 public class Personaje {
 
     @Id

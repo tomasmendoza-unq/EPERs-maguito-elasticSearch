@@ -2,6 +2,8 @@ package ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring;
 
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.model.Personaje;
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.PersonajeService;
+import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.ResetService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,11 @@ public class PersonajeServiceTest {
     @Autowired
     private PersonajeService personajeService;
 
+    @Autowired
+    private ResetService resetService;
 
-    //@BeforeEach
+
+    @BeforeEach
     public void setUp() {
         personajeService.save(new Personaje( "caballero", "un caballero muy poderoso",21, 12));
         personajeService.save(new Personaje( "paladin", "un paladin muy poderoso",21, 12));
@@ -50,14 +55,24 @@ public class PersonajeServiceTest {
 
     @Test
     public void findPersonajesPorNombreODescripcion() {
-        // WHEN
         List<Personaje> personajes = personajeService.buscarEnNombreODescripcion("poderoso");
 
-        // THEN
+
         assertEquals(4, personajes.size(), "Debe encontrar 4 personajes que contengan 'poderoso'");
         assertTrue(personajes.stream().allMatch(
                 p -> p.getDescripcion().contains("poderoso") || p.getNombre().contains("poderoso")
         ));
     }
 
+    @Test
+    public void obtenerVidaPromedio(){
+        Double promedioVida = personajeService.obtenerPromedioVida();
+
+        assertEquals(12, promedioVida.floatValue(),0.01);
+    }
+
+    @AfterEach
+    public void tearDown() {
+        resetService.resetAll();
+    }
 }

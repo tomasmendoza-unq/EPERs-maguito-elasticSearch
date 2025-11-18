@@ -20,7 +20,7 @@ public class PersonajeDAOCustomImpl implements PersonajeDAOCustom {
     @Override
     public Double obtenerPromedioVida() throws IOException {
         var  response = client.search(s -> s
-                        .index("Personaje")
+                        .index("personaje")
                         .size(0)
                         .aggregations("promedio" , a -> a.avg(avg -> avg.field("vida"))
                         ), Personaje.class

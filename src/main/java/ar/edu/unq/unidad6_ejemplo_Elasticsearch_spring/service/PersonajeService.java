@@ -2,6 +2,7 @@ package ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service;
 
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.model.Personaje;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface PersonajeService {

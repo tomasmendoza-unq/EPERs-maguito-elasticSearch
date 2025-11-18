@@ -6,6 +6,7 @@ import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.PersonajeService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -36,16 +37,18 @@ public class PersonajeServiceimpl implements PersonajeService {
 
 
     public List<Personaje> buscarEnNombreODescripcion(String query){
-        // TODO: Buscar en nombre O descripción
-        // "Rey" debe encontrar personajes con "Rey" en nombre o descripción
         List <Personaje> response = personajeDao.findPersonajesConDescripcionONombre(query);
         return response;
     }
 
 
-    public Double obtenerPromedioVida()  {
-        // TODO: Calcular promedio de vida de todos los personajes
-        return personajeDao.obtenerPromedioVida();
+    public Double obtenerPromedioVida() {
+        try {
+            return personajeDao.obtenerPromedioVida();
+        } catch (IOException e) {
+            throw new IllegalStateException("Fallo al comunicarse con Elasticsearch", e);
+        }
+
     }
 
 }
