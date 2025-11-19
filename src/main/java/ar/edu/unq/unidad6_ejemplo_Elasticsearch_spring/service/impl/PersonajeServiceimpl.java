@@ -3,12 +3,14 @@ package ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.impl;
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.model.Personaje;
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.persistencia.elastic.PersonajeDao;
 import ar.edu.unq.unidad6_ejemplo_Elasticsearch_spring.service.PersonajeService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
 
+@Slf4j
 @Service
 @Transactional
 public class PersonajeServiceimpl implements PersonajeService {
@@ -27,7 +29,16 @@ public class PersonajeServiceimpl implements PersonajeService {
 
     @Override
     public Personaje save(Personaje personaje) {
-        return personajeDao.save(personaje);
+        Personaje saved = personajeDao.save(personaje);
+
+        log.info("CREADO Personaje id={} nombre={} vida={} pesoMax={}",
+                saved.getId(),
+                saved.getNombre(),
+                saved.getVida(),
+                saved.getPesoMaximo());
+
+
+        return saved;
     }
 
     @Override

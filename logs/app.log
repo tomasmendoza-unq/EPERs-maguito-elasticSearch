@@ -1,0 +1,11 @@
+2025-11-19 11:03:11 INFO  a.e.u.u.PersonajeServiceTest - Starting PersonajeServiceTest using Java 21.0.8 with PID 12712 (started by user in C:\Users\user\Documents\UNQ\epers\Unidad-6-ejemplo-Elasticsearch-spring\Unidad-6-ejemplo-Elasticsearch-spring)
+2025-11-19 11:03:11 DEBUG a.e.u.u.PersonajeServiceTest - Running with Spring Boot v3.5.7, Spring v6.2.12
+2025-11-19 11:03:11 INFO  a.e.u.u.PersonajeServiceTest - No active profile set, falling back to 1 default profile: "default"
+2025-11-19 11:03:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+2025-11-19 11:03:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 1 Elasticsearch repository interface.
+2025-11-19 11:03:15 INFO  a.e.u.u.PersonajeServiceTest - Started PersonajeServiceTest in 4.461 seconds (process running for 5.995)
+2025-11-19 11:03:16 INFO  a.e.u.u.s.impl.PersonajeServiceimpl - CREADO Personaje id=aPhtnJoB4qs5IrbtP6l_ nombre=caballero vida=12 pesoMax=21
+2025-11-19 11:03:16 INFO  a.e.u.u.s.impl.PersonajeServiceimpl - CREADO Personaje id=afhtnJoB4qs5IrbtP6nN nombre=paladin vida=12 pesoMax=21
+2025-11-19 11:03:16 INFO  a.e.u.u.s.impl.PersonajeServiceimpl - CREADO Personaje id=avhtnJoB4qs5IrbtP6nm nombre=arquero vida=12 pesoMax=21
+2025-11-19 11:03:16 INFO  a.e.u.u.s.impl.PersonajeServiceimpl - CREADO Personaje id=a_htnJoB4qs5IrbtQKkA nombre=Druida vida=12 pesoMax=21
+2025-11-19 11:03:16 INFO  a.e.u.u.s.impl.PersonajeServiceimpl - CREADO Personaje id=bPhtnJoB4qs5IrbtQKkj nombre=Maguito vida=12 pesoMax=21

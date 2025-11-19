@@ -71,7 +71,7 @@ public class PersonajeServiceTest {
         assertEquals(12, promedioVida.floatValue(),0.01);
     }
 
-    @AfterEach
+    //@AfterEach
     public void tearDown() {
         resetService.resetAll();
     }
